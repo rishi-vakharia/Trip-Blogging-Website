@@ -1,0 +1,31 @@
+---
+- name: Deploy and run frontend and backend containers on all target machines
+  hosts: all
+
+  vars: 
+    ansible_python_interpreter: /usr/bin/python3
+
+  tasks:
+
+    - name: Start docker service
+      service: 
+        name: docker
+        state: started
+
+    - name: Copy Docker compose file from host machine to target machine
+      copy:
+        src: ../docker-compose.yml
+        dest: ./
+    
+    - name: Remove containers from target machine if they already exist
+      shell:
+        cmd: |
+          if [ "$(docker ps -a -q -f name=frontend-container)" ]; then
+            docker rm frontend-container
+          fi
+          if [ "$(docker ps -a -q -f name=backend-container)" ]; then
+            docker rm backend-container
+          fi
+
+    - name: Finally, run the containers on target machine using docker compose
+      shell: docker compose up -d

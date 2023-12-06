@@ -50,13 +50,13 @@ pipeline {
             }
         }
 
-        // stage('Stage 6: Pull image from Docker Hub and deploy on hosts using Ansible') {
-        //     steps {
-        //         ansiblePlaybook installation: 'Ansible',
-        //         playbook: 'Deployment/deploy.yml',
-        //         inventory: 'Deployment/inventory',
-        //         credentialsId: 'LocalhostUserCredentials'
-        //     }
-        // }
+        stage('Stage 6: Deploy containers on target machines using Ansible') {
+            steps {
+                ansiblePlaybook installation: 'Ansible',
+                playbook: 'ansible/deploy_containers.yml',
+                inventory: 'ansible/inventory',
+                credentialsId: 'LocalhostUserCredentials'
+            }
+        }
     }
 }
