@@ -13,25 +13,26 @@ pipeline {
         stage('Stage 2: Build frontend docker image') {
             steps {
                 echo "Build frontend docker image"
-                script {
-                    fe_image = docker.build("rishivakharia/frontend-image:latest", frontend)
-                }
+                sh "docker build -t rishivakharia/frontend-image:latest frontend/"
             }
         }
         stage('Stage 3: Build backend docker image') {
             steps {
                 echo "Build backend docker image"
-                script {
-                    be_image = docker.build("rishivakharia/backend-image:latest", backend)
-                }
+                sh "docker build -t rishivakharia/backend-image:latest backend/"
             }
         }
         stage('Stage 4: Push frontend & backend images to Docker Hub') {
             steps {
                 script {
                     docker.withRegistry('', 'DockerHubCredentials') {
-                        fe_image.push()
-                        be_image.push()
+                        
+                        echo "Push frontend Docker Image to Docker Hub"
+                        sh "docker push rishivakharia/frontend-image:latest"
+
+                        echo "Push backend Docker Image to Docker Hub"
+                        sh "docker push rishivakharia/backend-image:latest"
+
                     }
                 }
             }
