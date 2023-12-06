@@ -42,13 +42,13 @@ pipeline {
             }
         }
         
-        // stage('Stage 5: Remove dangling images') {
-        //     steps {
-        //         script {
-        //             sh 'docker image prune -f'
-        //         }
-        //     }
-        // }
+        stage('Stage 5: Remove dangling images') {
+            steps {
+                script {
+                    sh 'docker image prune -f'
+                }
+            }
+        }
 
         // stage('Stage 6: Pull image from Docker Hub and deploy on hosts using Ansible') {
         //     steps {

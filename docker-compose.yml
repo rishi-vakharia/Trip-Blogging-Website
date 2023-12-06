@@ -3,13 +3,13 @@ version: "1"
 services:
 
   frontend:
-    image: rishivakharia/frontend-image
+    image: rishivakharia/frontend-image:latest
     container_name: frontend-container
     ports:
       - "3000:3000"
       
   backend:
-    image: rishivakharia/backend-image
+    image: rishivakharia/backend-image:latest
     container_name: backend-container
     ports:
       - "8000:8000"
