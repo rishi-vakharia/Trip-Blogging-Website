@@ -5,23 +5,27 @@ pipeline {
     }
     agent any
     stages {
+        
         stage('Stage 1: Pull code from Github') {
             steps {
                 git branch: 'main', url: 'https://github.com/rishi-vakharia/SPE-FinalProj.git'
             }
         }
+
         stage('Stage 2: Build frontend docker image') {
             steps {
                 echo "Build frontend docker image"
                 sh "docker build -t rishivakharia/frontend-image:latest frontend/"
             }
         }
+
         stage('Stage 3: Build backend docker image') {
             steps {
                 echo "Build backend docker image"
                 sh "docker build -t rishivakharia/backend-image:latest backend/"
             }
         }
+
         stage('Stage 4: Push frontend & backend images to Docker Hub') {
             steps {
                 script {
@@ -37,6 +41,7 @@ pipeline {
                 }
             }
         }
+        
         // stage('Stage 5: Remove dangling images') {
         //     steps {
         //         script {
@@ -44,6 +49,7 @@ pipeline {
         //         }
         //     }
         // }
+
         // stage('Stage 6: Pull image from Docker Hub and deploy on hosts using Ansible') {
         //     steps {
         //         ansiblePlaybook installation: 'Ansible',

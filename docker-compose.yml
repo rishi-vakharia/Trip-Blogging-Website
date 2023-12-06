@@ -1,1 +1,15 @@
-# todo
+version: "1"
+
+services:
+
+  frontend:
+    image: rishivakharia/frontend-image
+    container_name: frontend-container
+    ports:
+      - "3000:3000"
+      
+  backend:
+    image: rishivakharia/backend-image
+    container_name: backend-container
+    ports:
+      - "8000:8000"
