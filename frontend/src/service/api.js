@@ -61,7 +61,7 @@ const processResponse = (response) => {
 //////////////////////////////
 const ProcessError = async (error) => {
     if (error.response) {
-        // Request made and server responded with a status code 
+        // Request made and backend responded with a status code 
         // that falls out of the range of 2xx
         if (error.response?.status === 403) {
             // const { url, config } = error.response;

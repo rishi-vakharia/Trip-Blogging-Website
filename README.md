@@ -1,13 +1,13 @@
 Frontend
 
-* There are no env variables for /client
+* There are no env variables for /frontend
 
 * Just npm install and npm start
 
 
 Backend
 
-* Connection to database will be made in /server/database/db.js
+* Connection to database will be made in /backend/database/db.js
 
 
 - MONGODB:

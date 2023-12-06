@@ -1,4 +1,4 @@
-# Dockerfile for Express server
+# Dockerfile for Express backend
 
 # Use the official Node.js 16.x image as the base image
 FROM node:16

@@ -1,4 +1,4 @@
-# Dockerfile for React client
+# Dockerfile for React frontend
 
 # Use the official Node.js 16.x image as the base image
 FROM node:16

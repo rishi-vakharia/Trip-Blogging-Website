@@ -14,11 +14,11 @@ export const API_NOTIFICATION_MESSAGES = {
     },
     responseFailure: {
         title: "Error!",
-        message: "An error occur while fetching response from server. Please try again"
+        message: "An error occur while fetching response from backend. Please try again"
     },
     networkError: {
         title: "Error!",
-        message: "Unable to connect to the server. Please check internet connectivity and try again."
+        message: "Unable to connect to the backend. Please check internet connectivity and try again."
     }
 }
 

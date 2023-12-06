@@ -27,4 +27,4 @@ const url = process.env.DB_URL;
 // Connection(username, password);
 Connection(url);
 
-app.listen(PORT, () => console.log(`Server is running successfully on PORT ${PORT}`));
+app.listen(PORT, () => console.log(`backend is running successfully on PORT ${PORT}`));
