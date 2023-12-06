@@ -20,7 +20,7 @@ export const singupUser = async (request, response) => {
         const newUser = new User(user);
         await newUser.save();
 
-        logger.info('Signup successfull')
+        logger.info('Signup successful')
         return response.status(200).json({ msg: 'Signup successfull' });
     } catch (error) {
         logger.info('Error while signing up user')
@@ -45,7 +45,7 @@ export const loginUser = async (request, response) => {
             const newToken = new Token({ token: refreshToken });
             await newToken.save();
             
-            logger.info('Login successful')
+            logger.info({message: 'Login successful', method: request.method, path: request.path, body: request.body, timestamp: new Date().toISOString()})
             response.status(200).json({ accessToken: accessToken, refreshToken: refreshToken,name: user.name, username: user.username });
         
         } else {
@@ -62,6 +62,6 @@ export const logoutUser = async (request, response) => {
     const token = request.body.token;
     await Token.deleteOne({ token: token });
 
-    logger.info('logout successfull')
-    response.status(204).json({ msg: 'logout successfull' });
+    logger.info('logout successful')
+    response.status(204).json({ msg: 'logout successful' });
 }
