@@ -1,16 +1,17 @@
 
 import Post from '../model/post.js';
 
+import logger from '../utils/logger.js';
 
 export const createPost = async (request, response) => {
     try {
         const post = await new Post(request.body);
         post.save();
 
-        console.log('Post saved successfully')
+        logger.info('Post saved successfully')
         response.status(200).json('Post saved successfully');
     } catch (error) {
-        console.log('Post saved error')
+        logger.info('Post saved error')
         response.status(500).json(error);
     }
 }
@@ -20,16 +21,16 @@ export const updatePost = async (request, response) => {
         const post = await Post.findById(request.params.id);
 
         if (!post) {
-            console.log('Post not found')
+            logger.info('Post not found')
             response.status(404).json({ msg: 'Post not found' })
         }
         
         await Post.findByIdAndUpdate( request.params.id, { $set: request.body })
 
-        console.log('Post updated successfully')
+        logger.info('Post updated successfully')
         response.status(200).json('post updated successfully');
     } catch (error) {
-        console.log('Post updated error')
+        logger.info('Post updated error')
         response.status(500).json(error);
     }
 }
@@ -40,10 +41,10 @@ export const deletePost = async (request, response) => {
         
         await post.delete()
 
-        console.log('Post deleted successfully')
+        logger.info('Post deleted successfully')
         response.status(200).json('post deleted successfully');
     } catch (error) {
-        console.log('Post deleted error')
+        logger.info('Post deleted error')
         response.status(500).json(error)
     }
 }
@@ -52,10 +53,10 @@ export const getPost = async (request, response) => {
     try {
         const post = await Post.findById(request.params.id);
 
-        console.log('Post get successful')
+        logger.info('Post get successful')
         response.status(200).json(post);
     } catch (error) {
-        console.log('Post get error')
+        logger.info('Post get error')
         response.status(500).json(error)
     }
 }
@@ -72,10 +73,10 @@ export const getAllPosts = async (request, response) => {
         else 
             posts = await Post.find({});
             
-        console.log('Posts get successful')
+        logger.info('Posts get successful')
         response.status(200).json(posts);
     } catch (error) {
-        console.log('Posts get error')
+        logger.info('Posts get error')
         response.status(500).json(error)
     }
 }

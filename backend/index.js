@@ -7,6 +7,7 @@ import bodyParser from 'body-parser';
 import Connection from './database/db.js';
 import Router from './routes/route.js';
 
+import logger from './utils/logger.js'
 
 dotenv.config();
 
@@ -26,5 +27,7 @@ const url = process.env.DB_URL;
 
 // Connection(username, password);
 Connection(url);
+
+// logger.info('Connection made')
 
 app.listen(PORT, () => console.log(`backend is running successfully on PORT ${PORT}`));
