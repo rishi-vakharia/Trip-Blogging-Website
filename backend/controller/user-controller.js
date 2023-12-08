@@ -20,10 +20,14 @@ export const singupUser = async (request, response) => {
         const newUser = new User(user);
         await newUser.save();
 
-        logger.info('Signup successful')
-        return response.status(200).json({ msg: 'Signup successfull' });
+        // logger.info('Signup successful')
+        // return response.status(200).json({ msg: 'Signup successfull' });
+        logger.info({ message: 'Signup successful', method: request.method, path: request.path, body: request.body, timestamp: new Date().toISOString() });
+        return response.status(200).json({ msg: 'Signup successful' });
     } catch (error) {
-        logger.info('Error while signing up user')
+        // logger.info('Error while signing up user')
+        // return response.status(500).json({ msg: 'Error while signing up user' });
+        logger.info({ message: 'Error while signing up user', method: request.method, path: request.path, body: request.body, timestamp: new Date().toISOString() });
         return response.status(500).json({ msg: 'Error while signing up user' });
     }
 }
@@ -32,7 +36,9 @@ export const singupUser = async (request, response) => {
 export const loginUser = async (request, response) => {
     let user = await User.findOne({ username: request.body.username });
     if (!user) {
-        logger.info('Username does not match')
+        // logger.info('Username does not match')
+        // return response.status(400).json({ msg: 'Username does not match' });
+        logger.info({ message: 'Username does not match', method: request.method, path: request.path, body: request.body, timestamp: new Date().toISOString() });
         return response.status(400).json({ msg: 'Username does not match' });
     }
 
@@ -49,12 +55,16 @@ export const loginUser = async (request, response) => {
             response.status(200).json({ accessToken: accessToken, refreshToken: refreshToken,name: user.name, username: user.username });
         
         } else {
-            logger.info('Password does not match')
-            response.status(400).json({ msg: 'Password does not match' })
+            // logger.info('Password does not match')
+            // response.status(400).json({ msg: 'Password does not match' })
+            logger.info({ message: 'Password does not match', method: request.method, path: request.path, body: request.body, timestamp: new Date().toISOString() });
+            response.status(400).json({ msg: 'Password does not match' });
         }
     } catch (error) {
-        logger.info('error while login the user')
-        response.status(500).json({ msg: 'error while login the user' })
+        // logger.info('error while login the user')
+        // response.status(500).json({ msg: 'error while login the user' })
+        logger.info({ message: 'Error while login the user', method: request.method, path: request.path, body: request.body, timestamp: new Date().toISOString() });
+        response.status(500).json({ msg: 'Error while login the user' });
     }
 }
 
@@ -62,6 +72,8 @@ export const logoutUser = async (request, response) => {
     const token = request.body.token;
     await Token.deleteOne({ token: token });
 
-    logger.info('logout successful')
-    response.status(204).json({ msg: 'logout successful' });
+    // logger.info('logout successful')
+    // response.status(204).json({ msg: 'logout successful' });
+    logger.info({ message: 'Logout successful', method: request.method, path: request.path, body: request.body, timestamp: new Date().toISOString() });
+    response.status(204).json({ msg: 'Logout successful' });
 }
