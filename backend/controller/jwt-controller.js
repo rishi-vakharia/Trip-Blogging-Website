@@ -15,7 +15,7 @@ export const authenticateToken = (request, response, next) => {
     if (token == null) {
         // logger.info('token is missing')
         // return response.status(401).json({ msg: 'token is missing' });
-        logger.info({ message: 'Token is missing', method: request.method, path: request.path, headers: request.headers, timestamp: new Date().toISOString() });
+        // logger.info({ message: 'Token is missing', method: request.method, path: request.path, headers: request.headers, timestamp: new Date().toISOString() });
         return response.status(401).json({ msg: 'Token is missing' });
     }
 
@@ -23,12 +23,12 @@ export const authenticateToken = (request, response, next) => {
         if (error) {
             // logger.info('invalid token')
             // return response.status(403).json({ msg: 'invalid token' })
-            logger.info({ message: 'Invalid token', method: request.method, path: request.path, headers: request.headers, timestamp: new Date().toISOString() });
+            // logger.info({ message: 'Invalid token', method: request.method, path: request.path, headers: request.headers, timestamp: new Date().toISOString() });
             return response.status(403).json({ msg: 'Invalid token' })
         }
 
         // logger.info('authenticate token success')
-        logger.info({ message: 'Authenticate token success', method: request.method, path: request.path, headers: request.headers, timestamp: new Date().toISOString() });
+        // logger.info({ message: 'Authenticate token success', method: request.method, path: request.path, headers: request.headers, timestamp: new Date().toISOString() });
         request.user = user;
         next();
     })
@@ -40,7 +40,7 @@ export const createNewToken = async (request, response) => {
     if (!refreshToken) {
         // logger.info('refresh token missing')
         // return response.status(401).json({ msg: 'Refresh token is missing' })
-        logger.info({ message: 'Refresh token missing', method: request.method, path: request.path, body: request.body, timestamp: new Date().toISOString() });
+        // logger.info({ message: 'Refresh token missing', method: request.method, path: request.path, body: request.body, timestamp: new Date().toISOString() });
         return response.status(401).json({ msg: 'Refresh token is missing' })
     }
 
@@ -49,7 +49,7 @@ export const createNewToken = async (request, response) => {
     if (!token) {
         // logger.info('referesh token invalid')
         // return response.status(404).json({ msg: 'Refresh token is not valid'});
-        logger.info({ message: 'Refresh token invalid', method: request.method, path: request.path, body: request.body, timestamp: new Date().toISOString() });
+        // logger.info({ message: 'Refresh token invalid', method: request.method, path: request.path, body: request.body, timestamp: new Date().toISOString() });
         return response.status(404).json({ msg: 'Refresh token is not valid' });
     }
 
@@ -57,14 +57,14 @@ export const createNewToken = async (request, response) => {
         if (error) {
             // logger.info('referesh token invalid')
             // response.status(500).json({ msg: 'invalid refresh token'});
-            logger.info({ message: 'Refresh token invalid', method: request.method, path: request.path, body: request.body, timestamp: new Date().toISOString() });
+            // logger.info({ message: 'Refresh token invalid', method: request.method, path: request.path, body: request.body, timestamp: new Date().toISOString() });
             response.status(500).json({ msg: 'Invalid refresh token' });
         }
         const accessToken = jwt.sign(user, process.env.ACCESS_SECRET_KEY, { expiresIn: '15m'});
 
         // logger.info('Create new token success', accessToken)
         // return response.status(200).json({ accessToken: accessToken })
-        logger.info({ message: 'Create new token success', accessToken, method: request.method, path: request.path, body: request.body, timestamp: new Date().toISOString() });
+        // logger.info({ message: 'Create new token success', accessToken, method: request.method, path: request.path, body: request.body, timestamp: new Date().toISOString() });
         return response.status(200).json({ accessToken: accessToken })
     })
 

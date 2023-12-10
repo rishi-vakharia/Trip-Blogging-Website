@@ -1,7 +1,7 @@
 export const categories = [
-    { id: 1, type: "Music" },
-    { id: 2, type: "Movies" },
-    { id: 3, type: "Sports" },
-    { id: 4, type: "Tech" },
-    { id: 5, type: "Fashion" }
+    { id: 1, type: "BANGALORE" },
+    { id: 2, type: "DELHI" },
+    { id: 3, type: "UDUPI" },
+    { id: 4, type: "MANALI" },
+    { id: 5, type: "SURAT" }
 ];

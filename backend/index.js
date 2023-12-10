@@ -19,14 +19,6 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use('/', Router);
-
-
-const PORT = process.env.EXPRESS_PORT;
-const username = process.env.DB_USERNAME;
-const password = process.env.DB_PASSWORD;
-
-const url = process.env.DB_URL;
 
 // ==================================
 // MORGAN LOGGING
@@ -52,9 +44,18 @@ app.use(morgan(':date[web] :method :url :status :res[content-length] - :response
 
 // ==================================
 
+app.use('/', Router);
+
+
+const PORT = process.env.EXPRESS_PORT;
+const username = process.env.DB_USERNAME;
+const password = process.env.DB_PASSWORD;
+
+const url = process.env.DB_URL;
+
 // Connection(username, password);
 Connection(url);
 
 // logger.info('Connection made')
 
-app.listen(PORT, () => console.log(`backend is running successfully on PORT ${PORT}`));
+app.listen(PORT, () => console.log(`Backend is running successfully on PORT ${PORT}`));

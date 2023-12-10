@@ -35,7 +35,7 @@ const Posts = () => {
                         </Link>
                     </Grid>
                 )) : <Box style={{color: '878787', margin: '30px 80px', fontSize: 18}}>
-                        No data is available for selected category
+                        No places added for this city
                     </Box>
             }
         </>

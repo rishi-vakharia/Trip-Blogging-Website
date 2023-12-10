@@ -45,8 +45,8 @@ const initialPost = {
     title: '',
     description: '',
     picture: '',
-    username: 'codeforinterview',
-    categories: 'Tech',
+    username: '',
+    categories: '',
     createdDate: new Date()
 }
 
@@ -59,7 +59,7 @@ const Update = () => {
 
     const { id } = useParams();
 
-    const url = 'https://images.unsplash.com/photo-1543128639-4cb7e6eeef1b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9wJTIwc2V0dXB8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80';
+    const url = 'https://images.unsplash.com/photo-1473186578172-c141e6798cf4?q=80&w=1073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
     
     useEffect(() => {
         const fetchData = async () => {
@@ -111,7 +111,7 @@ const Update = () => {
                     style={{ display: "none" }}
                     onChange={(e) => setFile(e.target.files[0])}
                 />
-                <InputTextField onChange={(e) => handleChange(e)} value={post.title} name='title' placeholder="Title" />
+                <InputTextField onChange={(e) => handleChange(e)} value={post.title} name='title' placeholder="Place Name" />
                 <Button onClick={() => updateBlogPost()} variant="contained" color="primary">Update</Button>
             </StyledFormControl>
 

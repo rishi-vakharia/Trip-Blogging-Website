@@ -16,7 +16,7 @@ const Container = styled(Box)(({ theme }) => ({
 
 const Image = styled('img')({
     width: '100%',
-    height: '50vh',
+    height: '40vh',
     objectFit: 'cover'
 });
 
@@ -59,7 +59,7 @@ const CreatePost = () => {
     const [file, setFile] = useState('');
     const { account } = useContext(DataContext);
 
-    const url = post.picture ? post.picture : 'https://images.unsplash.com/photo-1543128639-4cb7e6eeef1b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9wJTIwc2V0dXB8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80';
+    const url = post.picture ? post.picture : 'https://images.unsplash.com/photo-1473186578172-c141e6798cf4?q=80&w=1073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
     
     useEffect(() => {
         const getImage = async () => { 
@@ -100,13 +100,13 @@ const CreatePost = () => {
                     style={{ display: "none" }}
                     onChange={(e) => setFile(e.target.files[0])}
                 />
-                <InputTextField onChange={(e) => handleChange(e)} name='title' placeholder="Title" />
+                <InputTextField onChange={(e) => handleChange(e)} name='title' placeholder="Place Name" />
                 <Button onClick={() => savePost()} variant="contained" color="primary">Publish</Button>
             </StyledFormControl>
 
             <Textarea
                 rowsMin={5}
-                placeholder="Tell your story..."
+                placeholder="How was your experience? Let us know... :)"
                 name='description'
                 onChange={(e) => handleChange(e)} 
             />

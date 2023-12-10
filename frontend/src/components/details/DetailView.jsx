@@ -55,7 +55,7 @@ const Author = styled(Box)(({ theme }) => ({
 }));
 
 const DetailView = () => {
-    const url = 'https://images.unsplash.com/photo-1543128639-4cb7e6eeef1b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9wJTIwc2V0dXB8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80';
+    const url = 'https://images.unsplash.com/photo-1473186578172-c141e6798cf4?q=80&w=1073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
     
     const [post, setPost] = useState({});
     const { account } = useContext(DataContext);

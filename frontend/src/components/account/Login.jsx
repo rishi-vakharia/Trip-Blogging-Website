@@ -13,14 +13,14 @@ const Component = styled(Box)`
 `;
 
 const Image = styled('img')({
-    width: 100,
+    width: 200,
     display: 'flex',
     margin: 'auto',
-    padding: '50px 0 0'
+    padding: '20px 0 0'
 });
 
 const Wrapper = styled(Box)`
-    padding: 25px 35px;
+    padding: 0px 35px 35px 25px;
     display: flex;
     flex: 1;
     overflow: auto;
@@ -80,7 +80,7 @@ const Login = ({ isUserAuthenticated }) => {
     const navigate = useNavigate();
     const { setAccount } = useContext(DataContext);
 
-    const imageURL = 'https://www.sesta.it/wp-content/uploads/2021/03/logo-blog-sesta-trasparente.png';
+    const imageURL = 'https://img.freepik.com/free-vector/flat-vintage-travel-background_23-2148189177.jpg?t=st=1702197921~exp=1702198521~hmac=794aa85a53ed514f052a86d3fb9fdc99ac3c681a36f6c618e2464fbd36a483aa';
 
     useEffect(() => {
         showError(false);
@@ -117,6 +117,8 @@ const Login = ({ isUserAuthenticated }) => {
             showError('');
             setSignup(signupInitialValues);
             toggleAccount('login');
+            alert('Signup successful!\n\nUsername: ' + signup.username + '\nPassword: ' + signup.password);
+
         } else {
             showError('Something went wrong! please try again later');
         }
@@ -129,7 +131,7 @@ const Login = ({ isUserAuthenticated }) => {
     return (
         <Component>
             <Box>
-                <Image src={imageURL} alt="blog" />
+                <Image src={imageURL} alt="travel" />
                 {
                     account === 'login' ?
                         <Wrapper>
@@ -141,15 +143,17 @@ const Login = ({ isUserAuthenticated }) => {
                             <LoginButton variant="contained" onClick={() => loginUser()} >Login</LoginButton>
                             <Text style={{ textAlign: 'center' }}>OR</Text>
                             <SignupButton onClick={() => toggleSignup()} style={{ marginBottom: 50 }}>Create an account</SignupButton>
+                        
                         </Wrapper> :
                         <Wrapper>
-                            <TextField variant="standard" onChange={(e) => onInputChange(e)} name='name' label='Enter Name' />
-                            <TextField variant="standard" onChange={(e) => onInputChange(e)} name='username' label='Enter Username' />
-                            <TextField variant="standard" onChange={(e) => onInputChange(e)} name='password' label='Enter Password' />
+                            <TextField variant="standard" value={signup.name} onChange={(e) => onInputChange(e)} name='name' label='Enter Name' />
+                            <TextField variant="standard" value={signup.username} onChange={(e) => onInputChange(e)} name='username' label='Enter Username' />
+                            <TextField variant="standard" value={signup.password} onChange={(e) => onInputChange(e)} name='password' label='Enter Password' />
 
                             <SignupButton onClick={() => signupUser()} >Signup</SignupButton>
                             <Text style={{ textAlign: 'center' }}>OR</Text>
                             <LoginButton variant="contained" onClick={() => toggleSignup()}>Already have an account</LoginButton>
+                        
                         </Wrapper>
                 }
             </Box>
