@@ -64,7 +64,9 @@ BE
 
 * npm start
 
-
+* npm test
+  (For testing signin)
+  
 # Docker relevant commands:
 
 SHOW DOCKER IMAGES
