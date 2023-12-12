@@ -59,3 +59,4 @@ Connection(url);
 // logger.info('Connection made')
 
 app.listen(PORT, () => console.log(`Backend is running successfully on PORT ${PORT}`));
+export default app;

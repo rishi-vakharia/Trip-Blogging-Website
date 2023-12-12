@@ -5,6 +5,7 @@ const expect = chai.expect;
 chai.should();
 import chaiHttp from 'chai-http';
 import app from '../index.js';
+// import { app } from '../index.js';
 
 chai.use(chaiHttp);
 
@@ -21,12 +22,12 @@ describe('Signin Test', () => {
 
     it('Signin user', (done) => {
         const task = {
-            username: "user@gmail.com",
-            password: "Test123@1"
+            username: "prathm",
+            password: "pratham"
         }
         // console.log(task);
         chai.request(app)
-        .post('/auth/login')
+        .post('/login')
         .send(task)
         .end((err, res) => {
             res.should.have.status(200);
