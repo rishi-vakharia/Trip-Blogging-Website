@@ -21,9 +21,11 @@
       shell:
         cmd: |
           if [ "$(docker ps -a -q -f name=frontend-container)" ]; then
+            docker stop frontend-container
             docker rm frontend-container
           fi
           if [ "$(docker ps -a -q -f name=backend-container)" ]; then
+            docker stop backend-container
             docker rm backend-container
           fi
 
