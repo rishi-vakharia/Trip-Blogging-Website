@@ -1,82 +1,32 @@
-Sun, 10 Dec 2023 08:11:01 GMT GET /comments 404 147 - 2.308 ms {}
-Sun, 10 Dec 2023 08:11:10 GMT GET /comments 404 147 - 1.250 ms {}
-Sun, 10 Dec 2023 08:11:12 GMT GET /comments 404 147 - 1.007 ms {}
-Sun, 10 Dec 2023 08:58:58 GMT GET /comments 404 147 - 400.773 ms {}
-Sun, 10 Dec 2023 09:07:03 GMT GET /comments 404 147 - 0.561 ms {}
-Sun, 10 Dec 2023 09:10:13 GMT GET /comments 404 147 - 0.657 ms {}
-Sun, 10 Dec 2023 09:10:16 GMT GET /comments 404 147 - 0.489 ms {}
-Sun, 10 Dec 2023 09:10:19 GMT GET /comments 404 147 - 0.585 ms {}
-Sun, 10 Dec 2023 09:10:28 GMT GET /comments 404 147 - 0.909 ms {}
-Sun, 10 Dec 2023 09:10:30 GMT GET /comments 404 147 - 0.763 ms {}
-Sun, 10 Dec 2023 09:10:43 GMT GET /comments 404 147 - 0.573 ms {}
-Sun, 10 Dec 2023 09:10:55 GMT GET /comments 404 147 - 0.923 ms {}
-Sun, 10 Dec 2023 09:16:26 GMT GET /comments 404 147 - 0.905 ms {}
-Sun, 10 Dec 2023 09:22:47 GMT GET /comments 404 147 - 0.419 ms {}
-Sun, 10 Dec 2023 09:23:33 GMT GET /comments 404 147 - 0.645 ms {}
-Sun, 10 Dec 2023 09:23:47 GMT GET /comments 404 147 - 0.410 ms {}
-Sun, 10 Dec 2023 09:24:04 GMT GET /comments 404 147 - 0.300 ms {}
-Sun, 10 Dec 2023 09:24:10 GMT GET /comments 404 147 - 0.425 ms {}
-Sun, 10 Dec 2023 09:41:49 GMT POST /login 200 734 - 243.376 ms {"username":"manan","password":"manan"}
-Sun, 10 Dec 2023 09:41:49 GMT GET /posts?category= 304 - - 158.894 ms {}
-Sun, 10 Dec 2023 09:41:49 GMT GET /file/1702199683954-blog-bannerghatta-national-park-safari2.avif 200 - - 307.517 ms {}
-Sun, 10 Dec 2023 09:41:49 GMT GET /file/1702200220995-blog-24bgchurchstreet.jpeg 200 - - 332.200 ms {}
-Mon, 11 Dec 2023 05:51:12 GMT POST /login 200 715 - 433.669 ms {"username":"pratham","password":"pratham"}
-Mon, 11 Dec 2023 05:51:12 GMT GET /posts?category= 304 - - 80.024 ms {}
-Mon, 11 Dec 2023 05:51:13 GMT GET /file/1702199683954-blog-bannerghatta-national-park-safari2.avif 200 - - 461.949 ms {}
-Mon, 11 Dec 2023 05:51:13 GMT GET /file/1702200220995-blog-24bgchurchstreet.jpeg 200 - - 559.374 ms {}
-Mon, 11 Dec 2023 05:51:23 GMT GET /posts?category= 304 - - 76.609 ms {}
-Mon, 11 Dec 2023 05:52:34 GMT POST /create 200 25 - 514.133 ms {"title":"DELHI","description":"Delhi is the capital city of India with a lot of different sites to visit and enjoy.","picture":"","username":"pratham","categories":"All","createdDate":"2023-12-11T05:51:03.889Z"}
-Mon, 11 Dec 2023 05:52:35 GMT GET /posts?category= 200 1408 - 60.021 ms {}
-Mon, 11 Dec 2023 05:52:37 GMT GET /file/1702199683954-blog-bannerghatta-national-park-safari2.avif 200 - - 1565.052 ms {}
-Mon, 11 Dec 2023 05:52:37 GMT GET /file/1702200220995-blog-24bgchurchstreet.jpeg 200 - - 1632.144 ms {}
-Mon, 11 Dec 2023 05:52:51 GMT GET /posts?category= 304 - - 68.712 ms {}
-Mon, 11 Dec 2023 05:52:54 GMT GET /posts?category=DELHI 304 - - 102.407 ms {}
-Mon, 11 Dec 2023 05:52:58 GMT GET /posts?category= 304 - - 89.274 ms {}
-Tue, 12 Dec 2023 16:24:10 GMT POST /login 200 715 - 126.170 ms {"username":"pratham","password":"pratham"}
-Tue, 12 Dec 2023 16:24:10 GMT GET /posts?category= 304 - - 19.479 ms {}
-Tue, 12 Dec 2023 16:24:10 GMT GET /file/1702199683954-blog-bannerghatta-national-park-safari2.avif 200 - - 56.564 ms {}
-Tue, 12 Dec 2023 16:24:11 GMT GET /file/1702200220995-blog-24bgchurchstreet.jpeg 200 - - 255.155 ms {}
-Tue, 12 Dec 2023 16:24:22 GMT GET /comments 404 147 - 2.221 ms {}
-Tue, 12 Dec 2023 16:24:22 GMT GET /post/6576a3a2b0c38305774d4d06 200 255 - 18.974 ms {}
-Tue, 12 Dec 2023 16:24:22 GMT GET /comments/6576a3a2b0c38305774d4d06 200 2 - 14.572 ms {}
-Tue, 12 Dec 2023 16:24:34 GMT GET /posts?category= 304 - - 8.515 ms {}
-Tue, 12 Dec 2023 16:24:34 GMT GET /file/1702200220995-blog-24bgchurchstreet.jpeg 200 - - 83.292 ms {}
-Tue, 12 Dec 2023 16:24:34 GMT GET /file/1702199683954-blog-bannerghatta-national-park-safari2.avif 200 - - 134.299 ms {}
-Tue, 12 Dec 2023 16:24:38 GMT GET /posts?category=DELHI 304 - - 8.430 ms {}
-Tue, 12 Dec 2023 16:24:40 GMT GET /posts?category=BANGALORE 304 - - 9.888 ms {}
-Tue, 12 Dec 2023 16:24:42 GMT GET /posts?category= 304 - - 10.303 ms {}
-Tue, 12 Dec 2023 16:24:45 GMT GET /posts?category=DELHI 304 - - 9.562 ms {}
-Tue, 12 Dec 2023 16:24:47 GMT GET /posts?category=UDUPI 304 - - 7.184 ms {}
-Tue, 12 Dec 2023 16:24:50 GMT GET /posts?category= 304 - - 14.736 ms {}
-Tue, 12 Dec 2023 16:58:42 GMT POST /auth/login 404 150 - 4.137 ms {"username":"user@gmail.com","password":"Test123@1"}
-Tue, 12 Dec 2023 18:24:14 GMT POST /auth/login 404 150 - 2.169 ms {"username":"user@gmail.com","password":"Test123@1"}
-Tue, 12 Dec 2023 18:30:34 GMT POST /auth/login 404 150 - 3.877 ms {"username":"user@gmail.com","password":"Test123@1"}
-Tue, 12 Dec 2023 18:40:47 GMT POST /auth/login 404 150 - 4.865 ms {"username":"user@gmail.com","password":"Test123@1"}
-Tue, 12 Dec 2023 18:41:48 GMT POST /login 200 715 - 108.769 ms {"username":"pratham","password":"pratham"}
-Tue, 12 Dec 2023 18:41:48 GMT GET /posts?category= 304 - - 14.140 ms {}
-Tue, 12 Dec 2023 18:41:48 GMT GET /file/1702199683954-blog-bannerghatta-national-park-safari2.avif 200 - - 49.871 ms {}
-Tue, 12 Dec 2023 18:41:48 GMT GET /file/1702200220995-blog-24bgchurchstreet.jpeg 200 - - 71.053 ms {}
-Tue, 12 Dec 2023 18:41:56 GMT GET /posts?category=BANGALORE 304 - - 14.561 ms {}
-Tue, 12 Dec 2023 18:41:57 GMT GET /posts?category= 304 - - 9.176 ms {}
-Tue, 12 Dec 2023 18:41:58 GMT GET /posts?category=BANGALORE 304 - - 6.860 ms {}
-Tue, 12 Dec 2023 18:41:59 GMT GET /posts?category=DELHI 304 - - 7.001 ms {}
-Tue, 12 Dec 2023 18:42:01 GMT GET /posts?category= 304 - - 8.297 ms {}
-Tue, 12 Dec 2023 18:42:11 GMT GET /posts?category= 304 - - 9.200 ms {}
-Tue, 12 Dec 2023 18:42:12 GMT GET /posts?category=MANALI 304 - - 6.868 ms {}
-Tue, 12 Dec 2023 18:42:16 GMT GET /posts?category= 304 - - 8.355 ms {}
-Tue, 12 Dec 2023 18:42:17 GMT GET /comments 404 147 - 2.523 ms {}
-Tue, 12 Dec 2023 18:42:17 GMT GET /post/6576a3a2b0c38305774d4d06 304 - - 8.767 ms {}
-Tue, 12 Dec 2023 18:42:17 GMT GET /comments/6576a3a2b0c38305774d4d06 304 - - 6.864 ms {}
-Tue, 12 Dec 2023 18:42:19 GMT GET /post/6576a3a2b0c38305774d4d06 304 - - 9.662 ms {}
-Tue, 12 Dec 2023 18:42:28 GMT GET /posts?category= 304 - - 7.474 ms {}
-Tue, 12 Dec 2023 18:42:28 GMT GET /file/1702199683954-blog-bannerghatta-national-park-safari2.avif 200 - - 42.991 ms {}
-Tue, 12 Dec 2023 18:42:29 GMT GET /file/1702200220995-blog-24bgchurchstreet.jpeg 200 - - 308.714 ms {}
-Tue, 12 Dec 2023 18:42:29 GMT GET /comments 404 147 - 0.612 ms {}
-Tue, 12 Dec 2023 18:42:29 GMT GET /post/6576a3a2b0c38305774d4d06 304 - - 8.424 ms {}
-Tue, 12 Dec 2023 18:42:29 GMT GET /comments/6576a3a2b0c38305774d4d06 304 - - 7.875 ms {}
-Tue, 12 Dec 2023 18:42:31 GMT GET /posts?category= 304 - - 8.258 ms {}
-Tue, 12 Dec 2023 18:42:31 GMT GET /file/1702199683954-blog-bannerghatta-national-park-safari2.avif 200 - - 53.189 ms {}
-Tue, 12 Dec 2023 18:42:31 GMT GET /file/1702200220995-blog-24bgchurchstreet.jpeg 200 - - 79.951 ms {}
-Tue, 12 Dec 2023 18:43:22 GMT POST /auth/login 404 150 - 3.873 ms {"username":"pratham","password":"pratham"}
-Tue, 12 Dec 2023 18:47:38 GMT POST /login 200 715 - 506.669 ms {"username":"pratham","password":"pratham"}
-Tue, 12 Dec 2023 18:48:27 GMT POST /login 400 33 - 1569.675 ms {"username":"prathm","password":"pratham"}
+2023-12-13T07:11:13.780Z GET /posts?category=BANGALORE {} 304 - 30.649 ms
+2023-12-13T07:11:15.517Z GET /posts?category=DELHI {} 304 - 31.948 ms
+2023-12-13T07:11:17.135Z GET /posts?category=UDUPI {} 304 - 170.427 ms
+2023-12-13T07:11:17.755Z GET /posts?category=MANALI {} 304 - 183.630 ms
+2023-12-13T07:11:18.100Z GET /posts?category=SURAT {} 304 - 22.680 ms
+2023-12-13T07:11:19.190Z GET /posts?category= {} 304 - 66.470 ms
+2023-12-13T07:11:22.368Z GET /posts?category= {} 304 - 114.662 ms
+2023-12-13T07:11:29.026Z POST /login {"username":"rishi","password":"rishi"} 200 734 304.553 ms
+2023-12-13T07:11:29.326Z GET /posts?category= {} 304 - 208.695 ms
+2023-12-13T07:11:50.763Z GET /posts?category= {} 304 - 23.875 ms
+2023-12-13T07:11:52.181Z GET /posts?category=UDUPI {} 304 - 23.998 ms
+2023-12-13T07:12:19.035Z POST /file/upload {"name":"Malpe-Beach-800x450-1.jpg"} 200 73 645.047 ms
+2023-12-13T07:12:21.057Z GET /file/1702451538398-blog-Malpe-Beach-800x450-1.jpg {} 200 - 245.057 ms
+2023-12-13T07:12:44.092Z POST /create {"title":"Malpe Beach","description":"The beach is a virgin beach, located at a distance about 6 kms from Udupi. It is an important port and a fishing harbour in the state of Karnataka. The endless stretch of golden sand, graciously swaying palm trees, clear blue sky and the gentle murmur of the sea, set the perfect mood for an idyllic holiday. Be sure to visit the Balarama Temple and Malpe’s oldest tile factory, set up by the Basel Mission.","picture":"http://localhost:8000/file/1702451538398-blog-Malpe-Beach-800x450-1.jpg","username":"rishi","categories":"UDUPI","createdDate":"2023-12-13T07:08:24.422Z"} 200 25 4.930 ms
+2023-12-13T07:12:44.254Z GET /posts?category= {} 200 3237 114.311 ms
+2023-12-13T07:13:08.555Z POST /login {"username":"pratham","password":"pratham"} 200 715 171.158 ms
+2023-12-13T07:13:08.752Z GET /posts?category= {} 304 - 113.458 ms
+2023-12-13T07:13:10.883Z GET /posts?category=DELHI {} 304 - 26.995 ms
+2023-12-13T07:13:12.745Z GET /posts?category= {} 304 - 114.136 ms
+2023-12-13T07:13:13.620Z GET /comments {} 404 147 1.433 ms
+2023-12-13T07:13:13.766Z GET /post/6576a3a2b0c38305774d4d06 {} 200 255 49.156 ms
+2023-12-13T07:13:14.141Z GET /comments/6576a3a2b0c38305774d4d06 {} 200 149 309.107 ms
+2023-12-13T07:13:15.199Z DELETE /delete/6576a3a2b0c38305774d4d06 {} 200 27 216.638 ms
+2023-12-13T07:13:15.309Z GET /posts?category= {} 200 2981 31.922 ms
+2023-12-13T07:13:17.462Z GET /comments {} 404 147 0.867 ms
+2023-12-13T07:13:17.801Z GET /post/65794bbab12fcd03a4bdd13a {} 200 223 332.992 ms
+2023-12-13T07:13:18.066Z GET /comments/65794bbab12fcd03a4bdd13a {} 200 2 138.265 ms
+2023-12-13T07:13:19.302Z DELETE /delete/65794bbab12fcd03a4bdd13a {} 200 27 74.470 ms
+2023-12-13T07:13:19.503Z GET /posts?category= {} 200 2757 151.974 ms
+2023-12-13T07:13:30.762Z POST /login {"username":"manan","password":"manan"} 200 734 603.985 ms
+2023-12-13T07:13:30.983Z GET /posts?category= {} 304 - 102.037 ms
+2023-12-13T07:13:35.287Z GET /posts?category=MANALI {} 200 2 30.526 ms

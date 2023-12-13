@@ -17,6 +17,10 @@ Backend
 	- Description: My IP Address
 
 
+ELK
+
+%{TIMESTAMP_ISO8601:timestamp} %{WORD:method} %{URIPATHPARAM:url} %{GREEDYDATA:req_data} %{BASE10NUM:res_status} %{DATA:res_content_length} %{BASE16FLOAT:res_time} ms
+
 FE
 
 # NPM relevant commands:

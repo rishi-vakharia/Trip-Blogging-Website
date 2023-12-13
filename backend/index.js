@@ -5,23 +5,23 @@ import bodyParser from 'body-parser';
 import morgan from 'morgan';
 import fs from 'fs';
 
-//components
+// Import function to make MongoDB connection
 import Connection from './database/db.js';
+
+// Import Express Router
 import Router from './routes/route.js';
 
-import logger from './utils/logger.js'
 
-
+// CONFIGURE 1
 dotenv.config();
-
 const app = express();
-
 app.use(cors());
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// ==================================
-// MORGAN LOGGING
+
+// ====================================================================
+// MORGAN LOGS (CONFIGURE 2)
 
 // Extract request's body, convert it to string and this output will be tagged as 
 // "data" parameter for morgan log pattern
@@ -38,25 +38,30 @@ morgan.token('data', request => JSON.stringify(request.body))
 	- And the second app.use(morgan()) call does exactly that
 */
 
-app.use(morgan(':date[web] :method :url :status :res[content-length] - :response-time ms :data', {
+app.use(morgan(':date[iso] :method :url :data :status :res[content-length] :response-time ms', {
     stream: fs.createWriteStream('./logs/access.log', {flags: 'a'})
 }))
 
-// ==================================
+/*
+  - Grok pattern in ELK for these logs: %{TIMESTAMP_ISO8601:timestamp} %{WORD:method} %{URIPATHPARAM:url} %{GREEDYDATA:req_data} %{BASE10NUM:res_status} %{DATA:res_content_length} %{BASE16FLOAT:res_time} ms
+*/
 
+// ====================================================================
+
+
+// CONFIGURE 3
+
+// Use the Express Router imported
 app.use('/', Router);
 
 
+// Make connection to MongoDB
 const PORT = process.env.EXPRESS_PORT;
-const username = process.env.DB_USERNAME;
-const password = process.env.DB_PASSWORD;
-
 const url = process.env.DB_URL;
-
-// Connection(username, password);
 Connection(url);
 
-// logger.info('Connection made')
 
+// Start the server
 app.listen(PORT, () => console.log(`Backend is running successfully on PORT ${PORT}`));
+
 export default app;
