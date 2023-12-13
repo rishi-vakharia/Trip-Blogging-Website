@@ -22,7 +22,7 @@ describe('Signin Test', () => {
 
     it('Signin user', (done) => {
         const task = {
-            username: "prathm",
+            username: "pratham",
             password: "pratham"
         }
         // console.log(task);

@@ -30,3 +30,8 @@
 2023-12-13T07:13:30.762Z POST /login {"username":"manan","password":"manan"} 200 734 603.985 ms
 2023-12-13T07:13:30.983Z GET /posts?category= {} 304 - 102.037 ms
 2023-12-13T07:13:35.287Z GET /posts?category=MANALI {} 200 2 30.526 ms
+2023-12-13T08:41:51.378Z POST /login {"username":"prathm","password":"pratham"} 400 33 816.883 ms
+2023-12-13T08:42:15.563Z POST /login {"username":"prathm","password":"pratham"} 400 33 1368.610 ms
+2023-12-13T08:42:39.654Z POST /login {"username":"pratham","password":"pratham"} 200 715 893.194 ms
+2023-12-13T08:43:36.518Z POST /login {"username":"pratham","password":"pratham"} 200 715 2759.451 ms
+2023-12-13T08:44:13.641Z POST /login {"username":"pratham","password":"pratham"} 200 715 1326.105 ms
