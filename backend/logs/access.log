@@ -38,3 +38,4 @@
 2023-12-13T08:57:46.729Z POST /login {"username":"pratham","password":"pratham"} 200 715 4433.850 ms
 2023-12-13T08:59:03.531Z POST /login {"username":"pratham","password":"pratham"} 200 715 1896.186 ms
 2023-12-13T10:01:11.263Z POST /login {"username":"pratham","password":"pratham"} 200 715 4162.098 ms
+2023-12-14T08:29:10.275Z POST /login {"username":"pratham","password":"pratham"} 200 715 1596.314 ms
