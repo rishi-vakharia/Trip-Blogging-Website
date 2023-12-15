@@ -12,21 +12,30 @@ pipeline {
             }
         }
 
-        stage('Stage 2: Build frontend docker image') {
+        stage('Stage 2: Test backend on Jenkins server') {
+            steps {
+                dir('backend') {
+                    sh "npm install"
+                    sh "npm test"
+                }
+            }
+        }
+
+        stage('Stage 3: Build frontend docker image') {
             steps {
                 echo "Build frontend docker image"
                 sh "docker build -t rishivakharia/frontend-image:latest frontend/"
             }
         }
 
-        stage('Stage 3: Build backend docker image') {
+        stage('Stage 4: Build backend docker image') {
             steps {
                 echo "Build backend docker image"
                 sh "docker build -t rishivakharia/backend-image:latest backend/"
             }
         }
 
-        stage('Stage 4: Push frontend & backend images to Docker Hub') {
+        stage('Stage 5: Push frontend & backend images to Docker Hub') {
             steps {
                 script {
                     docker.withRegistry('', 'DockerHubCredentials') {
@@ -42,7 +51,7 @@ pipeline {
             }
         }
         
-        stage('Stage 5: Remove dangling images') {
+        stage('Stage 6: Remove dangling images') {
             steps {
                 script {
                     sh 'docker image prune -f'
@@ -50,7 +59,7 @@ pipeline {
             }
         }
 
-        stage('Stage 6: Deploy containers on target machines using Ansible') {
+        stage('Stage 7: Deploy containers on target machines using Ansible') {
             steps {
                 ansiblePlaybook installation: 'Ansible',
                 playbook: 'ansible/deploy_containers.yml',
