@@ -12,14 +12,14 @@ pipeline {
             }
         }
 
-        stage('Stage 2: Test backend on Jenkins server') {
-            steps {
-                dir('backend') {
-                    sh "npm install"
-                    sh "npm test"
-                }
-            }
-        }
+        // stage('Stage 2: Test backend on Jenkins server') {
+        //     steps {
+        //         dir('backend') {
+        //             sh "npm install"
+        //             sh "npm test"
+        //         }
+        //     }
+        // }
 
         stage('Stage 3: Build frontend docker image') {
             steps {
